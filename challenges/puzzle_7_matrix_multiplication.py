@@ -10,14 +10,13 @@ class MatrixMultiplication:
     def __init__(self, n_rows, max_value):
         self.n_rows = n_rows
         self.max_value = max_value
-        self._size = self.n_rows ** 2
+        self.num_elements = self.n_rows ** 2
 
-    @staticmethod
-    def is_unique(size, matrix):
-        return size == len(set(matrix.flatten()))
+    def is_unique(self, matrix):
+        return self.num_elements == len(set(matrix.flatten()))
 
     def rec(self, index, matrix):
-        if index == self._size:
+        if index == self.num_elements:
             yield matrix
             return
 
@@ -36,7 +35,7 @@ class MatrixMultiplication:
         for sample_A in self.rec(0, A):
             for sample_B in self.rec(0, B):
                 C = np.matmul(sample_A, sample_B)
-                if self.__class__.is_unique(self._size, C):
+                if self.is_unique(C):
                     c_sum = np.sum(C)
                     if c_sum < min_sum:
                         min_sum = c_sum
@@ -49,7 +48,7 @@ class MatrixMultiplication:
 
         return result
 
-challenge = MatrixMultiplication(n_rows=3, max_value=3)
+challenge = MatrixMultiplication(n_rows=2, max_value=3)
 result = challenge.run()
 
 min_A = result.min_A
