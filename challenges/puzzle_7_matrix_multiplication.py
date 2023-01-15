@@ -5,6 +5,7 @@ class MatrixMultiplication:
     """ 
         The trivial solution to the matrix multiplication puzzle, of course it 
         won't pass the tests as it takes too much time. 
+        https://www.topcoder.com/challenges/403cd499-d38e-4088-a6c6-b6de931a27b4
     """
     def __init__(self, n_rows, max_value):
         self.n_rows = n_rows
@@ -48,7 +49,7 @@ class MatrixMultiplication:
 
         return result
 
-challenge = MatrixMultiplication(n_rows=2, max_value=3)
+challenge = MatrixMultiplication(n_rows=3, max_value=3)
 result = challenge.run()
 
 min_A = result.min_A
