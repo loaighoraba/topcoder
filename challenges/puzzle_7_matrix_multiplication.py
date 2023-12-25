@@ -1,12 +1,14 @@
 import numpy as np
 from collections import namedtuple
 
+
 class MatrixMultiplication:
-    """ 
-        The trivial solution to the matrix multiplication puzzle, of course it 
-        won't pass the tests as it takes too much time. 
+    """
+        The trivial solution to the matrix multiplication puzzle, of course it
+        won't pass the tests as it takes too much time.
         https://www.topcoder.com/challenges/403cd499-d38e-4088-a6c6-b6de931a27b4
     """
+
     def __init__(self, n_rows, max_value):
         self.n_rows = n_rows
         self.max_value = max_value
@@ -48,6 +50,7 @@ class MatrixMultiplication:
 
         return result
 
+
 challenge = MatrixMultiplication(n_rows=2, max_value=3)
 result = challenge.run()
 
@@ -55,7 +58,7 @@ min_A = result.min_A
 min_B = result.min_B
 min_C = result.min_C
 min_sum = result.min_sum
-print( f"A:\n{min_A}\n\n"
-        f"B:\n{min_B}\n\n"
-        f"C:\n{min_C}\n\n" 
-        f"Sum:{min_sum}")
+print(f"A:\n{min_A}\n\n"
+      f"B:\n{min_B}\n\n"
+      f"C:\n{min_C}\n\n"
+      f"Sum:{min_sum}")
